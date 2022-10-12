@@ -66,13 +66,14 @@ namespace Test
             /*int n = int.Parse(Console.ReadLine());
             int a = 1;
             int b = 1;
-            Console.WriteLine(a + " ");
-            Console.WriteLine(b + " ");
+            int temp;
+            Console.Write($"{a} {b} ");
             for (int i = 0; i < n; i++)
             {
-                Console.WriteLine(a = b);
-                Console.WriteLine(b = a+b);
-            }*/
+                temp = a;
+                b = temp + b;
+            }
+            Console.Write(b + " ");*/
 
             Console.ReadKey();
         }
