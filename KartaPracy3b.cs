@@ -98,13 +98,13 @@ namespace Test
             // Zad 10
             /*for (int i = 1; i < 1000; i++)
             {
-                if (i - Math.Floor(i / 10.0) * 10 == Math.Sqrt(i))
+                if (Math.Pow(i % 10, 2) == i)
                 {
                     Console.WriteLine(i);
                 }
                 else
                 {
-                    if (i - Math.Floor(i / 100.0) * 100 == Math.Sqrt(i))
+                    if (Math.Pow(i % 100, 2) == i)
                     {
                         Console.WriteLine(i);
                     }
