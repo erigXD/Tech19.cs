@@ -45,8 +45,71 @@ namespace Test
                 }
             }*/
 
-            // Zad Bonus
+            // Zad 3
+            /*int n = int.Parse(Console.ReadLine());
+            for (int i = 1; i < n+1; i++)
+            {
+                Console.WriteLine("*");
+            }*/
+
+            // Zad 5
+            /*int n = int.Parse(Console.ReadLine());
+            for (int i = 1; i < n + 1; i++)
+            {
+                for (int j = 1; j < n + 1; j++)
+                {
+                    if (j == n / 2 + 1)
+                    {
+                        Console.Write("*");
+                    }
+                    else if (i == n / 2 + 1)
+                    {
+                        Console.Write("-");
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }*/
+
+            // Zad 6
             int n = int.Parse(Console.ReadLine());
+            for (int i = 1; i < n + 1; i++)
+            {
+                for (int j = 1; j < n + 1; j++)
+                {
+                    if (i == n - j)
+                    {
+                        Console.Write("*");
+                    }
+                    else
+                    {
+                        Console.WriteLine();
+                    }
+                }
+            }
+            // Zad 7
+            /*int n = int.Parse(Console.ReadLine());
+            for (int i = 1; i < n + 1; i++)
+            {
+                for (int j = 1; j < n + 1; j++)
+                {
+                    if (i == 1 || j == 1 || j == n || i == n || (i == n/2 + 1 && j == n/2 + 1))
+                    {
+                        Console.Write("*");
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }*/
+
+            // Zad Bonus
+            /*int n = int.Parse(Console.ReadLine());
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < i + 1; j++)
@@ -70,12 +133,12 @@ namespace Test
 
             for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j < n - i - 1; j++)
+                for (int j = 0; j < n - i; j++)
                 {
                     Console.Write(" ");
                 }
                 Console.WriteLine();
-                for (int k = n-i-1; k < n; k++)
+                for (int k = n - i - 1; k < n; k++)
                 {
                     Console.Write("*");
                 }
@@ -91,11 +154,79 @@ namespace Test
                     Console.Write("*");
                 }
                 Console.WriteLine();
-                for (int k = n-i-1; k < n; k++)
+                for (int k = n - i - 1; k < n; k++)
                 {
                     Console.Write(" ");
                 }
+            }*/
+
+            /*int n = int.Parse(Console.ReadLine());
+            for (int i = 1; i < n + 1; i++)
+            {
+                for (int j = 1; j < n + 1; j++)
+                {
+                    if (i >= j)
+                    {
+                        Console.Write("*");
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
             }
+            Console.WriteLine();
+
+            for (int i = 1; i < n + 1; i++)
+            {
+                for (int j = 1; j < n + i; j++)
+                {
+                    if (i <= n - j + 1)
+                    {
+                        Console.Write("*");
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+
+            for (int i = 1; i < n + 1; i++)
+            {
+                for (int j = 1; j < n + i; j++)
+                {
+                    if (n - j < i)
+                    {
+                        Console.Write(" ");
+                    }
+                    else
+                    {
+                        Console.Write("*");
+                    }
+                }
+                Console.WriteLine();
+            }
+
+            for (int i = 1; i < n + 1; i++)
+            {
+                for (int j = 1; j < n + 1; j++)
+                {
+                    if (i <= j)
+                    {
+                        Console.Write("*");
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }*/
+
+            
             Console.ReadKey();
         }
     }
