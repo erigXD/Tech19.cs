@@ -8,10 +8,10 @@ class Program {
             a = int.Parse(System.Console.ReadLine());
             b = int.Parse(System.Console.ReadLine());
             if ((a + b) % 2 == 0) {
-              System.Console.WriteLine("TAK, suma parzysta"); 
+              System.Console.WriteLine("TAK"); 
             }
             else {
-              System.Console.WriteLine("NIE, suma nieparzysta");
+              System.Console.WriteLine("NIE");
             }
 
             //zad2
