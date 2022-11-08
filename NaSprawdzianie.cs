@@ -15,7 +15,7 @@ namespace Test
         {
             // Zad 1 - Light Hard - Napisz program który obliczy sumę n pierwszych liczb fibonacciego
 
-            /*nt n = int.Parse(Console.ReadLine());
+            /*int n = int.Parse(Console.ReadLine());
             int a = 0;
             int b = 1;
             int temp;
