@@ -7,27 +7,25 @@ StreamWriter wynik = new(@"C:\\Zadanie4\\wyniki4.txt");
 
 bool czyPierwsza(int n)
 {
-    for (int i = 2; i < n/2+1; i++)
+    for (int i = 2; i < n - 1; i++)
     {
-        if (n%i == 0)
+        if (n % i == 0 && n < 5000 && n > 100)
         {
             return false;
         }
+        return true;
     }
 }
 
 foreach (string i in liczby)
 {
-    for (int j = 2; j < i - 1; j++)
-    {
-        if (i % j == 0)
+    if (czyPierwsza(Convert.ToInt32(i)) == true)
         {
             wynik.WriteLine(i);
         }
-    }
 }
 
-wynik.WriteLine("Zad4.1");
+//wynik.WriteLine("Zad4.1");
 
 foreach (string item in liczby)
 {
