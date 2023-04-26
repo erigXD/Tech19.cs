@@ -151,7 +151,7 @@ void Scalaj(int lewy, int prawy)
     }
     if (i_lewy > srodek)
     {
-        while (i_prawy > prawy)
+        while (i_prawy <= prawy)
         {
             T[i] = pom[i_prawy];
             i_prawy++;
