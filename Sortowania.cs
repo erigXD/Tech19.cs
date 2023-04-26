@@ -180,7 +180,9 @@ void Sortuj(int lewy, int prawy)
     {
         Sortuj(srodek + 1, prawy);
     }
+    Scalaj(lewy, prawy)
 }
+
 
 // 7. Quicksort Hoare
 /*int QuickSortHoare(int[] T, int lewy, int prawy)
