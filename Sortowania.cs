@@ -185,7 +185,7 @@ void Sortuj(int lewy, int prawy)
 
 
 // 7. Quicksort Hoare
-/*int QuickSortHoare(int[] T, int lewy, int prawy)
+bool QuickSortHoare(int[] T, int lewy, int prawy)
 {
     int i = lewy;
     int j = prawy;
@@ -206,19 +206,23 @@ void Sortuj(int lewy, int prawy)
             int temp = T[i];
             T[i] = T[j];
             T[j] = temp;
+            i++;
+            j--;
         }
     }
     if (lewy < j)
     {
-        Console.WriteLine(QuickSortHoare(T, lewy, j));
+        QuickSortHoare(T, lewy, j);
     }
     if (prawy > i)
     {
-        Console.WriteLine(QuickSortHoare(T, i, prawy));
+        QuickSortHoare(T, i, prawy);
     }
-    Console.WriteLine(T);
-    return 0;
-}*/
+    return true;
+}
+
+Console.WriteLine("QuickSortHoare: ");
+QuickSortHoare(T, 0, (T.Length) - 1);
 
 // 8. Quicksort Lomuto
 
