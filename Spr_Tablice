@@ -1,0 +1,96 @@
+// Zad 1
+
+/*Random random = new Random();
+
+int[] T = new int[30];
+for (int i = 0; i < T.Length; i++)
+{
+    T[i] = random.Next(100, 1000);
+}
+
+int suma = 0;
+int ilosc = 0;
+for (int i = 0; i < T.Length; i++)
+{
+    int jednosci = (T[i] % 100) % 10;
+    int dziesiatki = (T[i] % 100) / 10;
+    int setki = T[i] / 100;
+    if (jednosci % 2 == 0 && dziesiatki % 2 == 0 && setki % 2 == 0)
+    {
+        suma += T[i];
+        ilosc += 1;
+    }
+}
+Console.WriteLine($"suma: {suma}");
+Console.WriteLine($"ilosc: {ilosc}");*/
+
+// Zad 2
+
+/*Random random = new Random();
+bool CzyPierwsza(int n)
+{
+    for (int i = 2; i < n; i++)
+    {
+        if (n % i == 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+int[] T1 = new int[10];
+for (int i = 0; i < T1.Length; i++)
+{
+    int liczba = random.Next(10, 100);
+    if (!CzyPierwsza(liczba))
+    {
+        T1[i] = liczba;
+    }
+}*/
+
+// Zad 3
+
+/*Random random = new Random();
+
+int n = int.Parse(Console.ReadLine());
+int[,] M = new int[n, n];
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < n; j++)
+    {
+        M[i, j] = random.Next(11, 50);
+    }
+}
+
+int suma = 0;
+int ilosc = 0;
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < n; j++)
+    {
+        if (i == n - 2 || j == n - 2)
+        {
+            suma += M[i, j];
+            ilosc += 1;
+            M[i, j] = 10;
+            Console.Write(M[i, j] + " ");
+        }
+        if (i == 1 || j == 1)
+        {
+            suma += M[i, j];
+            ilosc += 1;
+            M[i, j] = 10;
+            Console.Write(M[i, j] + " ");
+        }
+        if (i == 0 || j == 0)
+        {
+            suma += M[i, j];
+            ilosc += 1;
+            Console.Write(M[i, j] + " ");
+        }
+        Console.Write(M[i, j] + " ");
+    }
+    Console.WriteLine();
+}*/
