@@ -1,0 +1,146 @@
+// 1
+using System.Numerics;
+
+int NWD(int a, int b)
+{
+    while (a != b)
+    {
+        if (a > b) a -= b;
+        if (b > a) b -= a;
+    }
+    return a;
+}
+
+int NWW(int a, int b)
+{
+    return a * b / NWD(a, b);
+}
+
+/*int x = int.Parse(Console.ReadLine());
+int y = int.Parse(Console.ReadLine());*/
+
+// Brute Force
+/*
+for (int i = 1; i < 100; i++)
+{
+    for (int j = 1; j < 100; j++)
+    {
+        if (NWD(i, j) == x && NWW(i, j) == y)
+        {
+            Console.WriteLine(i + " " + j);
+        }
+    }
+}*/
+
+// Iloczyn nwd*nww
+
+/*int iloczyn = x * y;
+
+for (int i = 1; i <= iloczyn; i++)
+{
+    if (iloczyn % i == 0 && NWD(i, iloczyn/i) == x && NWW(i, iloczyn/i) == y)
+    {
+        Console.WriteLine(i + " " + iloczyn/i);
+    }
+}*/
+
+// 2
+/*string pier = Console.ReadLine();
+string drug = Console.ReadLine();
+string[] P = pier.Split("/");
+string[] D = drug.Split("/");
+
+int a = int.Parse(P[0]);
+int b = int.Parse(P[1]);
+int c = int.Parse(D[0]);
+int d = int.Parse(D[1]);
+
+int mianownik = NWW(b, d);
+int licz1 = mianownik * a / b;
+int licz2 = mianownik * c / d;
+
+if (licz1 + licz2 > mianownik)
+{
+    Console.WriteLine("tak");
+}
+else
+{
+    Console.WriteLine("nie");
+}*/
+
+// 4
+/*char[] Samogloski = { 'a', 'e', 'i', 'o', 'u', 'y' };
+string napis = Console.ReadLine();
+
+int ilosc = 0;
+
+for (int i = 0; i < napis.Length; i++)
+{
+    if (Samogloski.Contains(napis[i]))
+    {
+        ilosc++;
+    }
+    else
+    {
+        ilosc--;
+    }
+}
+
+if (ilosc > 0)
+{
+    Console.WriteLine("Więcej samogłosek");
+}
+else
+{
+    Console.WriteLine("Więcej Spółgłosek");
+}*/
+
+// 10
+
+int a = int.Parse(Console.ReadLine());
+int b = int.Parse(Console.ReadLine());
+int c = int.Parse(Console.ReadLine());
+
+int m = int.Parse(Console.ReadLine());
+int maks = 0;
+
+if (a > b && a > c)
+{
+    maks = a;
+}
+if (b > a && b > c)
+{
+    maks = b;
+}
+if (c > a && c > b)
+{
+    maks = c;
+}
+int k = maks + m;
+
+Console.WriteLine("Maksymalna wartość k = " + k);
+
+int d = a + b + c;
+
+
+/*while (m > 0 || a!=b)
+{
+    if (a < b && a < c)
+    {
+        a += 1;
+        m -= 1;
+        Console.WriteLine("m = " + m);
+    }
+    if (b < a && b < c)
+    {
+        b += 1;
+        m -= 1;
+        Console.WriteLine("m = " + m);
+    }
+    if (c < a && c < b)
+    {
+        c += 1;
+        m -= 1;
+        Console.WriteLine("m = " + m);
+    }
+}*/
