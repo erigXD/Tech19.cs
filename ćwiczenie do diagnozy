@@ -144,3 +144,66 @@ int d = a + b + c;
         Console.WriteLine("m = " + m);
     }
 }*/
+
+/*int w1 = 30;
+int w2 = 40;
+int odl = 50;
+
+for (int i = 0; i <= odl; i++)
+{
+    if (w1 * w1 + i * i == w2 * w2 + (odl - i) * (odl - i))
+    {
+        if (i > odl / 2) Console.WriteLine(i);
+        else Console.WriteLine(odl - i);
+    }
+}*/
+
+/*1.Napisz program, który pomnoży dwie macierze losowych liczb. 
+Niech user podający wymiary macierzy zadba o odpowiednie wymiary,
+tak aby mnożenie było możliwe. Macierze wypełnij losowymi liczbami.
+
+2. Napisz algorytm, który sprawdzi czy gdzieś w macierzy 10x10 losowych liczb dwucyfrowych
+doszło do sytuacji, że obok siebie są dwie liczby pierwsze.
+
+3. Napisz program, który sprawdzi, czy dwa słowa wpisane przez usera są anagramami
+
+4. Napisz program, który znajdzie w podanej n-elementowej tablicy najdłuższy spójny podciąg niemalejący
+oraz obliczy jego długość i sumę jego elementów
+
+5. Wygeneruj macierz n x n z losowymi cyframi. Znajdź sumę tych elementów tej macierzy,
+które należą do którejkolwiek osi symetrii.*/
+
+// 1
+int x1 = int.Parse(Console.ReadLine());
+int y1 = int.Parse(Console.ReadLine());
+
+int x2 = int.Parse(Console.ReadLine());
+int y2 = int.Parse(Console.ReadLine());
+
+int[,] M1 = new int[x1, y1];
+int[,] M2 = new int[x2, y2];
+
+Random r = new Random();
+
+for (int i = 0; i < x1; i++)
+{
+    for (int j = 0; j < y1; j++)
+    {
+        M1[i, j] = r.Next(1, 10);
+    }
+}
+
+for (int i = 0; i < x2; i++)
+{
+    for (int j = 0; j < y2; j++)
+    {
+        M2[i, j] = r.Next(1, 10);
+    }
+}
+
+int suma = 0;
+int l = 0;
+for (int i = 0; i < x1; i++)
+{
+    suma += M1[i, l] * M2[l, i];
+}
