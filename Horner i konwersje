@@ -1,0 +1,53 @@
+// Horner
+/*using System.Formats.Tar;
+
+string a = Console.ReadLine();
+
+int p = int.Parse(Console.ReadLine());
+int wynik = a[0] - 48;
+
+for (int i = 0; i < a.Length - 1; i++)
+{
+    wynik = ((wynik) * p) + (a[i + 1] - 48);
+    Console.WriteLine(wynik);
+}*/
+
+// Konwersja BIN>DEC oraz DEC>BIN
+
+string b = Console.ReadLine();
+
+int wynik = 0;
+int pot = 0;
+for (int i = b.Length - 1; i >= 0; i++)
+{
+    if (b[i] == 1)
+    {
+        wynik += (b[i] - 48) * (int)Math.Pow(2, b.Length-i-1);
+    }
+    pot++;
+}
+Console.WriteLine(wynik);
+
+// Konwersja DEC>BIN
+
+int d = int.Parse(Console.ReadLine());
+string bin = "";
+
+// Iteracyjnie
+while(d > 0)
+{
+    bin = d % 2 + bin;
+    d /= 2;
+}
+Console.WriteLine(bin);
+
+// Rekurencyjnie
+void d2b (int p)
+{
+    if (p == 0)
+    {
+        return;
+    }
+    d2b(p / 2);
+    Console.WriteLine(p % 2);
+}
