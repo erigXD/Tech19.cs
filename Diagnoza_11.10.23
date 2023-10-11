@@ -1,0 +1,209 @@
+//Zad -1
+
+using System.Reflection.Metadata;
+
+int NWD(int a, int b)
+{
+    while (a != b)
+    {
+        if (a > b) a -= b;
+        if (b > a) b -= a;
+    }
+    return a;
+}
+bool czyPierwsza(int n)
+{
+    for (int i = 1; i < n/2; i++)
+    {
+        if (n % i == 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+/*int a = int.Parse(Console.ReadLine());
+int b = int.Parse(Console.ReadLine());*/
+
+/*if (!czyPierwsza(NWD(a, b))){
+    Console.WriteLine("Para liczb jest parą ibrahim-Pasza");
+}
+else
+{
+    Console.WriteLine("Para liczb nie jest parą ibrahim-Pasza");
+}*/
+
+//Zad 0
+
+/*for (int i = 20; i < 51; i++)
+{
+    for (int j = 20; j < 51; j++)
+    {
+        if (!czyPierwsza(NWD(i, j)))
+        {
+            Console.WriteLine(i + " " + j);
+        }
+    }
+}*/
+
+//Zad 1
+/*int n = int.Parse(Console.ReadLine());
+Random r = new Random();
+
+int[,] M = new int[n, n];
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < n; j++)
+    {
+        int rand = r.Next(0, 10);
+        if (rand <= 4)
+        {
+            M[i, j] = 0;
+        }
+        else if (rand == 5 || rand == 6)
+        {
+            M[i, j] = 1;
+        }
+        else if (rand == 7 || rand == 8)
+        {
+            M[i, j] = 2;
+        }
+        else if (rand == 9)
+        {
+            M[i, j] = r.Next(3, 5);
+        }
+    }
+}
+
+int ile = 0;
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < n; j++)
+    {
+        if (M[i, j] == M[0, 0])
+        {
+            if (M[i, j + 1] + M[i + 1, j] + M[i + 1, j + 1] == M[i, j])
+            {
+                ile++;
+            }
+        }
+        else if (M[i, j] == M[0, n])
+        {
+            if (M[i + 1, j] + M[i, j - 1] + M[i + 1, j - 1] == M[i, j])
+            {
+                ile++;
+            }
+        }
+        else if (M[i, j] == M[n, 0])
+        {
+            if (M[i, j + 1] + M[i - 1, j] + M[i - 1, j + 1] == M[i, j])
+            {
+                ile++;
+            }
+        }
+        else if (M[i, j] == M[n, n])
+        {
+            if (M[i, j - 1] + M[i - 1, j] + M[i - 1, j - 1] == M[i, j])
+            {
+                ile++;
+            }
+        }
+        else if (i == 0 && M[i, j] != M[0, n] && M[i, j] != M[0, 0])
+        {
+            if (M[i, j - 1] + M[i - 1, j] + M[i - 1, j - 1] + M[i, j + 1] + M[i - 1, j + 1] == M[i, j])
+            {
+                ile++;
+            }
+        }
+        else if (i == n && M[i, j] != M[n, 0] && M[i, j] != M[n, n])
+        {
+            if (M[i, j - 1] + M[i + 1, j] + M[i + 1, j - 1] + M[i, j + 1] + M[i + 1, j + 1] == M[i, j])
+            {
+                ile++;
+            }
+        }
+        else if (j == 0 && M[i, j] != M[0, 0] && M[i, j] != M[n, 0])
+        {
+            if (M[i + 1, j] + M[i - 1, j] + M[i + 1, j + 1] + M[i - 1, j + 1] + M[i, j + 1] == M[i, j])
+            {
+                ile++;
+            }
+        }
+        else if (j == n && M[i, j] != M[0, n] && M[i, j] != M[n, n])
+        {
+            if (M[i, j - 1] + M[i + 1, j] + M[i + 1, j - 1] + M[i - 1, j - 1] + M[i - 1, j] == M[i, j])
+            {
+                ile++;
+            }
+        }
+        else
+        {
+            if (M[i, j - 1] + M[i - 1, j] + M[i - 1, j - 1] + M[i, j + 1] + M[i + 1, j] + M[i - 1, j + 1] + M[i + 1, j - 1] + M[i + 1, j + 1] == M[i, j])
+            {
+                ile++;
+            }
+        }
+    }
+}
+
+Console.WriteLine($"{ile} komórek spełnia warunek Kołeja");*/
+
+// Zad 2
+
+/*string b = Console.ReadLine();
+
+int[] T = new int[100];
+int ile = 0;
+
+foreach (int i in b)
+{
+    T[i]++;
+    ile++;
+    if (ile == 20)
+    {
+        break;
+    }
+}
+
+int maks = 0;
+
+for (int i = 0; i < T.Length; i++)
+{
+    if (T[i] == 0)
+    {
+        continue;
+    }
+    else if (T[i] > maks)
+    {
+        maks = T[i];
+        T[i] = 0;
+    }
+}
+
+for (int i = 0; i < T.Length; i++)
+{
+    if (T[i] == maks)
+    {
+        Console.WriteLine("W kodzie jest dokładnie dwóch liderów");
+        T[i] = 0;
+        break;
+    }
+    
+}
+
+for (int i = 0; i < T.Length; i++)
+{
+    if (T[i] !>= maks)
+    {
+        Console.WriteLine("W kodzie nie ma dokładnie dwóch liderów");
+        break;
+    }
+}*/
+
+//Zad 3
+
+//Zad 4
+// Robiłem zadania z kart pracy i przeglądałem kod na gicie.
