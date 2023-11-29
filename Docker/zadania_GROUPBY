@@ -15,5 +15,19 @@ ORDER by COUNT(CreditCardID) DESC;
 6. Wypisz 3 najliczniejsze miesiące kiedy wygasają karty Vista w 2007 roku.
 
 7. W którym roku wygasa najmniej kart w miesiącach letnich?
+SELECT CardType FROM creditcard WHERE CardType REGEXP "^[d-z].{0,}$"
+-------------------------------------
+REGEXP - znajduje tak jak LIKE
+^ - początek
+$ - koniec
+[a-z] - wszystkie litery
+[0-9] - wszystkie cyfry
+[!c] - nie ma być "c"
+kropki (....) - ile znaków zawiera
+{} - ile razy ma się powtórzyć
+{5} - pięć razy
+{0,} - nieskończoność razy
+{0,6} - tak też działa
+-------------------------------------
 
 8. Utwórz zestawienie typów kart wraz z ilościami zakładając, że wygasają w miesiącach nieparzystych
