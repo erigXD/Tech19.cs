@@ -146,3 +146,20 @@ for (int i = 1; i <= n; i++)
     suma += r5d(i);
 }
 Console.WriteLine(suma);*/
+
+// 6. Wypisz n pierwszych wyrazów ciągu:
+// a) 1,5 1 0,5 -0,5 -2 -4,5 -8,5 -15
+
+int n = 4;
+double r6a(int n)
+{
+    if (n == 1) return 1.5;
+    if (n == 2) return 1;
+    if (n == 3) return 0.5;
+    return r6a(n - 1) * 2 - r6a(n-3);
+}
+
+for (int i = 1; i < 10; i++)
+{
+    Console.Write(r6a(i) + " ");
+}
