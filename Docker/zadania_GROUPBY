@@ -15,19 +15,22 @@ ORDER by COUNT(CreditCardID) DESC;
 6. Wypisz 3 najliczniejsze miesiące kiedy wygasają karty Vista w 2007 roku.
 
 7. W którym roku wygasa najmniej kart w miesiącach letnich?
-SELECT CardType FROM creditcard WHERE CardType REGEXP "^[d-z].{0,}$"
+SELECT ExpYear FROM creditcard WHERE ExpMonth REGEXP "^[6-8]$" GROUP BY ExpYear ORDER BY COUNT(*) ASC LIMIT 1
 -------------------------------------
 REGEXP - znajduje tak jak LIKE
 ^ - początek
 $ - koniec
 [a-z] - wszystkie litery
 [0-9] - wszystkie cyfry
-[!c] - nie ma być "c"
+[^c] - nie ma być "c" (negacja)
 kropki (....) - ile znaków zawiera
 {} - ile razy ma się powtórzyć
+\d{5} - pięć cyfr
+\s{5} - pięć liter
 {5} - pięć razy
-{0,} - nieskończoność razy
-{0,6} - tak też działa
+{n,} - przynajmniej n razy
+{0,6} - od do razy
 -------------------------------------
 
 8. Utwórz zestawienie typów kart wraz z ilościami zakładając, że wygasają w miesiącach nieparzystych
+SELECT CardType, COUNT(*) FROM creditcard WHERE ExpMonth % 2 = 1 GROUP BY CardType
